@@ -23,9 +23,9 @@ public class AuthService {
     
     @Transactional
     public LoginResponse login(LoginRequest loginRequest) {
-        log.info("Login attempt for email: {} with userId: {}", loginRequest.getEmail(), loginRequest.getUserId());
+        log.info("Login attempt for email: {}", loginRequest.getEmail());
         
-        // Check if user exists with the provided email (ignore the userId for now, just use it for response)
+        // Check if user exists with the provided email
         Optional<User> userOptional = userRepository.findByEmail(loginRequest.getEmail());
         
         User user;
@@ -61,15 +61,13 @@ public class AuthService {
             throw new RuntimeException("User already exists with email: " + request.getEmail());
         }
         
-        if (userRepository.existsByUsername(request.getUsername())) {
-            throw new RuntimeException("Username already taken: " + request.getUsername());
-        }
+        // Generate username from email
+        String username = generateUsernameFromEmail(request.getEmail());
         
         User user = new User();
         user.setEmail(request.getEmail());
-        user.setUsername(request.getUsername());
+        user.setUsername(username);
         user.setFirstName(request.getFirstName());
-        user.setLastName(request.getLastName());
         user.setIsActive(true);
         
         User savedUser = userRepository.save(user);
