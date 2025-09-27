@@ -9,8 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,6 +22,7 @@ import java.util.stream.Collectors;
 public class HealthRiskAssessmentService {
     
     private final HealthRiskAssessmentRepository repository;
+    private final Random random = new Random();
     
     public HealthRiskAssessmentResponse createAssessment(HealthRiskAssessmentRequest request) {
         log.info("Creating health risk assessment for age: {}, city: {}", request.getAge(), request.getCity());
@@ -179,6 +182,30 @@ public class HealthRiskAssessmentService {
         }
     }
     
+    private List<String> generateRandomSuggestions() {
+        List<String> allSuggestions = Arrays.asList(
+            "You should jog regularly for better cardiovascular health",
+            "Consider walking at least 30 minutes daily",
+            "Regular exercise can significantly improve your health",
+            "Try swimming as a low-impact exercise option",
+            "Yoga and meditation can help reduce stress",
+            "Maintain a balanced diet with plenty of vegetables",
+            "Drink more water throughout the day",
+            "Get adequate sleep of 7-8 hours daily",
+            "Consider cycling as a fun way to stay active",
+            "Regular health check-ups are important",
+            "Limit processed foods and sugar intake",
+            "Practice deep breathing exercises"
+        );
+        
+        // Return 2-4 random suggestions
+        int numSuggestions = 2 + random.nextInt(3); // 2, 3, or 4 suggestions
+        return allSuggestions.stream()
+                .sorted((a, b) -> random.nextInt(3) - 1)
+                .limit(numSuggestions)
+                .collect(Collectors.toList());
+    }
+    
     private HealthRiskAssessment mapToEntity(HealthRiskAssessmentRequest request) {
         HealthRiskAssessment assessment = new HealthRiskAssessment();
         updateEntityFromRequest(assessment, request);
@@ -201,24 +228,29 @@ public class HealthRiskAssessmentService {
     }
     
     private HealthRiskAssessmentResponse mapToResponse(HealthRiskAssessment assessment) {
-        return new HealthRiskAssessmentResponse(
-                assessment.getId(),
-                assessment.getAge(),
-                assessment.getSex(),
-                assessment.getWeight(),
-                assessment.getBmi(),
-                assessment.getHereditaryDiseases(),
-                assessment.getNumberOfDependents(),
-                assessment.getIsSmoker(),
-                assessment.getCity(),
-                assessment.getBloodPressure(),
-                assessment.getHasDiabetes(),
-                assessment.getRegularExercise(),
-                assessment.getJobTitle(),
-                assessment.getRiskScore(),
-                assessment.getRiskCategory(),
-                assessment.getCreatedAt(),
-                assessment.getUpdatedAt()
-        );
+        HealthRiskAssessmentResponse response = new HealthRiskAssessmentResponse();
+        response.setId(assessment.getId());
+        response.setAge(assessment.getAge());
+        response.setSex(assessment.getSex());
+        response.setWeight(assessment.getWeight());
+        response.setBmi(assessment.getBmi());
+        response.setHereditaryDiseases(assessment.getHereditaryDiseases());
+        response.setNumberOfDependents(assessment.getNumberOfDependents());
+        response.setIsSmoker(assessment.getIsSmoker());
+        response.setCity(assessment.getCity());
+        response.setBloodPressure(assessment.getBloodPressure());
+        response.setHasDiabetes(assessment.getHasDiabetes());
+        response.setRegularExercise(assessment.getRegularExercise());
+        response.setJobTitle(assessment.getJobTitle());
+        response.setRiskScore(assessment.getRiskScore());
+        response.setRiskCategory(assessment.getRiskCategory());
+        response.setCreatedAt(assessment.getCreatedAt());
+        response.setUpdatedAt(assessment.getUpdatedAt());
+        
+        // Add random score and suggestions for now
+        response.setScore(random.nextInt(101)); // Random score 0-100
+        response.setSuggestions(generateRandomSuggestions());
+        
+        return response;
     }
 }

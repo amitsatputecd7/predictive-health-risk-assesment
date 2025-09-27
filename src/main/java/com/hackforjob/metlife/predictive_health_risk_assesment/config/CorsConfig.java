@@ -16,16 +16,10 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins(
-                    "http://localhost:3000",    // React development server
-                    "http://localhost:3001",    // Alternative frontend port
-                    "http://localhost:4200",    // Angular development server
-                    "http://localhost:8081",    // Alternative port
-                    "https://yourdomain.com"    // Production domain
-                )
+                .allowedOriginPatterns("*") // Use allowedOriginPatterns instead of allowedOrigins
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(true)
+                .allowCredentials(false) // Set to false for testing, true if credentials are needed
                 .maxAge(3600); // Cache preflight response for 1 hour
     }
 
@@ -34,13 +28,8 @@ public class CorsConfig implements WebMvcConfigurer {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         
-        // Allowed origins - replace with your frontend URLs
-        configuration.setAllowedOrigins(Arrays.asList(
-            "http://localhost:3000",
-            "http://localhost:3001", 
-            "http://localhost:4200",
-            "https://yourdomain.com"
-        ));
+        // Use allowedOriginPatterns instead of allowedOrigins
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
         
         // Allowed methods
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
@@ -48,8 +37,8 @@ public class CorsConfig implements WebMvcConfigurer {
         // Allowed headers
         configuration.setAllowedHeaders(Arrays.asList("*"));
         
-        // Allow credentials (cookies, authorization headers)
-        configuration.setAllowCredentials(true);
+        // Allow credentials (set to false for testing)
+        configuration.setAllowCredentials(false);
         
         // Cache preflight response
         configuration.setMaxAge(3600L);
