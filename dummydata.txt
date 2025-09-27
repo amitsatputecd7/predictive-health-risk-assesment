@@ -1,0 +1,125 @@
+
+const dummyAssessmentData = {
+  // Personal Information
+  age: "32",
+  gender: "male",
+  height: "175",
+  weight: "75",
+  bloodType: "A+",
+  
+  // Medical History
+  chronicConditions: ["Diabetes", "Asthma"],
+  medications: "Metformin 500mg twice daily, Albuterol inhaler as needed",
+  allergies: "Penicillin, shellfish, pollen",
+  familyHistory: ["Heart Disease", "Cancer", "Diabetes"],
+  previousSurgeries: "Appendectomy in 2018, wisdom teeth removal in 2015",
+  
+  // Lifestyle
+  smokingStatus: "former",
+  alcoholConsumption: "moderate",
+  exerciseFrequency: "moderate",
+  dietType: "balanced",
+  sleepHours: "7-8",
+  stressLevel: "moderate",
+  
+  // Health Metrics
+  bloodPressure: "125/82",
+  cholesterolLevel: "195",
+  bloodSugar: "98",
+  heartRate: "72",
+  
+  // Work Environment
+  workType: "desk",
+  workStress: "high",
+  workHours: "45",
+  workEnvironmentHazards: ["Long Hours", "Repetitive Motion"],
+  
+  // Calculated/System Fields (added by the form)
+  bmi: "24.5",
+  userId: "user_123456",
+  submittedAt: "2025-09-27T10:30:45.123Z"
+};
+
+// Alternative dummy data examples:
+
+const dummyAssessmentData2 = {
+  // Personal Information
+  age: "28",
+  gender: "female",
+  height: "162",
+  weight: "58",
+  bloodType: "O-",
+  
+  // Medical History
+  chronicConditions: ["Depression", "Anxiety"],
+  medications: "Sertraline 50mg daily, Multivitamin",
+  allergies: "None known",
+  familyHistory: ["Mental Health Issues", "Stroke"],
+  previousSurgeries: "",
+  
+  // Lifestyle
+  smokingStatus: "never",
+  alcoholConsumption: "occasional",
+  exerciseFrequency: "intense",
+  dietType: "vegetarian",
+  sleepHours: "5-6",
+  stressLevel: "high",
+  
+  // Health Metrics
+  bloodPressure: "110/70",
+  cholesterolLevel: "165",
+  bloodSugar: "85",
+  heartRate: "65",
+  
+  // Work Environment
+  workType: "remote",
+  workStress: "moderate",
+  workHours: "40",
+  workEnvironmentHazards: ["Long Hours"],
+  
+  // Calculated/System Fields
+  bmi: "22.1",
+  userId: "user_789012",
+  submittedAt: "2025-09-27T14:15:30.456Z"
+};
+
+const dummyAssessmentData3 = {
+  // Personal Information
+  age: "45",
+  gender: "other",
+  height: "180",
+  weight: "90",
+  bloodType: "B+",
+  
+  // Medical History
+  chronicConditions: ["Heart Disease", "Stroke"],
+  medications: "Lisinopril 10mg daily, Aspirin 81mg daily, Atorvastatin 20mg",
+  allergies: "Latex, ibuprofen",
+  familyHistory: ["Heart Disease", "Cancer", "Diabetes", "Stroke"],
+  previousSurgeries: "Cardiac stent placement 2020, gallbladder removal 2019",
+  
+  // Lifestyle
+  smokingStatus: "current",
+  alcoholConsumption: "frequent",
+  exerciseFrequency: "light",
+  dietType: "fast-food",
+  sleepHours: "<5",
+  stressLevel: "very-high",
+  
+  // Health Metrics
+  bloodPressure: "140/95",
+  cholesterolLevel: "240",
+  bloodSugar: "125",
+  heartRate: "85",
+  
+  // Work Environment
+  workType: "physical",
+  workStress: "very-high",
+  workHours: "55",
+  workEnvironmentHazards: ["Chemical Exposure", "Heavy Lifting", "Noise", "Long Hours"],
+  
+  // Calculated/System Fields
+  bmi: "27.8",
+  userId: "user_345678",
+  submittedAt: "2025-09-27T16:45:15.789Z"
+};

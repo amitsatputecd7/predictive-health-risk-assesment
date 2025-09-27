@@ -1,0 +1,13 @@
+{
+  "age": 30,
+  "sex": "MALE",
+  "bmi": 25.5,
+  "hereditary_diseases": "None",
+  "number_of_dependents": 2,
+  "is_smoker": false,
+  "city": "Mumbai",
+  "blood_pressure": "NORMAL",
+  "has_diabetes": false,
+  "regular_exercise": true,
+  "job_title": "Software Engineer"
+}
