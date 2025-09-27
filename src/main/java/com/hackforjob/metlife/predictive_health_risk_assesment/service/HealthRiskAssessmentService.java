@@ -123,7 +123,7 @@ public class HealthRiskAssessmentService {
         }
         
         // Diabetes factor (0-20 points)
-        if (assessment.getHasDiabetes()) {
+        if ("Yes".equalsIgnoreCase(assessment.getHasDiabetes())) {
             riskScore += 20;
         }
         
@@ -148,7 +148,7 @@ public class HealthRiskAssessmentService {
         }
         
         // Exercise factor (0-10 points, inverted - no exercise increases risk)
-        if (!assessment.getRegularExercise()) {
+        if ("no".equalsIgnoreCase(assessment.getRegularExercise())) {
             riskScore += 10;
         }
         
@@ -188,6 +188,7 @@ public class HealthRiskAssessmentService {
     private void updateEntityFromRequest(HealthRiskAssessment assessment, HealthRiskAssessmentRequest request) {
         assessment.setAge(request.getAge());
         assessment.setSex(request.getSex());
+        assessment.setWeight(request.getWeight());
         assessment.setBmi(request.getBmi());
         assessment.setHereditaryDiseases(request.getHereditaryDiseases());
         assessment.setNumberOfDependents(request.getNumberOfDependents());
@@ -204,6 +205,7 @@ public class HealthRiskAssessmentService {
                 assessment.getId(),
                 assessment.getAge(),
                 assessment.getSex(),
+                assessment.getWeight(),
                 assessment.getBmi(),
                 assessment.getHereditaryDiseases(),
                 assessment.getNumberOfDependents(),

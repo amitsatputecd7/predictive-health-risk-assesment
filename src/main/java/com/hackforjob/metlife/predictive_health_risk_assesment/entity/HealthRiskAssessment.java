@@ -32,6 +32,12 @@ public class HealthRiskAssessment {
     @Column(nullable = false)
     private String sex;
     
+    @NotNull(message = "Weight is required")
+    @DecimalMin(value = "1.0", message = "Weight must be at least 1.0 kg")
+    @DecimalMax(value = "500.0", message = "Weight must be at most 500.0 kg")
+    @Column(nullable = false)
+    private Double weight;
+    
     @NotNull(message = "BMI is required")
     @DecimalMin(value = "10.0", message = "BMI must be at least 10.0")
     @DecimalMax(value = "50.0", message = "BMI must be at most 50.0")
@@ -61,13 +67,15 @@ public class HealthRiskAssessment {
     @Column(name = "blood_pressure", nullable = false)
     private String bloodPressure;
     
-    @NotNull(message = "Diabetes status is required")
+    @NotBlank(message = "Diabetes status is required")
+    @Pattern(regexp = "^(Yes|No|yes|no)$", message = "Diabetes status must be Yes or No")
     @Column(name = "has_diabetes", nullable = false)
-    private Boolean hasDiabetes;
+    private String hasDiabetes;
     
-    @NotNull(message = "Regular exercise status is required")
+    @NotBlank(message = "Regular exercise status is required")
+    @Pattern(regexp = "^(yes|no|Yes|No)$", message = "Regular exercise status must be yes or no")
     @Column(name = "regular_exercise", nullable = false)
-    private Boolean regularExercise;
+    private String regularExercise;
     
     @NotBlank(message = "Job title is required")
     @Size(max = 100, message = "Job title must not exceed 100 characters")
