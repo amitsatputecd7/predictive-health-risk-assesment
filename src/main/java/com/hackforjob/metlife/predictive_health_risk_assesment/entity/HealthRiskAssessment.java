@@ -38,6 +38,12 @@ public class HealthRiskAssessment {
     @Column(nullable = false)
     private Double weight;
     
+    @NotNull(message = "Height is required")
+    @DecimalMin(value = "0.5", message = "Height must be at least 0.5 meters")
+    @DecimalMax(value = "3.0", message = "Height must be at most 3.0 meters")
+    @Column(nullable = false)
+    private Double height;
+    
     @NotNull(message = "BMI is required")
     @DecimalMin(value = "10.0", message = "BMI must be at least 10.0")
     @DecimalMax(value = "50.0", message = "BMI must be at most 50.0")

@@ -156,7 +156,9 @@ public class HealthRiskAssessmentService {
         }
         
         // Hereditary diseases factor (0-10 points)
-        if (assessment.getHereditaryDiseases() != null && !assessment.getHereditaryDiseases().trim().isEmpty()) {
+        if (assessment.getHereditaryDiseases() != null && 
+            !assessment.getHereditaryDiseases().trim().isEmpty() && 
+            !assessment.getHereditaryDiseases().equalsIgnoreCase("None")) {
             riskScore += 10;
         }
         
@@ -216,8 +218,16 @@ public class HealthRiskAssessmentService {
         assessment.setAge(request.getAge());
         assessment.setSex(request.getSex());
         assessment.setWeight(request.getWeight());
+        assessment.setHeight(request.getHeight());
         assessment.setBmi(request.getBmi());
-        assessment.setHereditaryDiseases(request.getHereditaryDiseases());
+        
+        // Convert List<String> to comma-separated String for database storage
+        if (request.getHereditaryDiseases() != null && !request.getHereditaryDiseases().isEmpty()) {
+            assessment.setHereditaryDiseases(String.join(",", request.getHereditaryDiseases()));
+        } else {
+            assessment.setHereditaryDiseases(null);
+        }
+        
         assessment.setNumberOfDependents(request.getNumberOfDependents());
         assessment.setIsSmoker(request.getIsSmoker());
         assessment.setCity(request.getCity());
@@ -233,8 +243,16 @@ public class HealthRiskAssessmentService {
         response.setAge(assessment.getAge());
         response.setSex(assessment.getSex());
         response.setWeight(assessment.getWeight());
+        response.setHeight(assessment.getHeight());
         response.setBmi(assessment.getBmi());
-        response.setHereditaryDiseases(assessment.getHereditaryDiseases());
+        
+        // Convert comma-separated String back to List<String> for response
+        if (assessment.getHereditaryDiseases() != null && !assessment.getHereditaryDiseases().trim().isEmpty()) {
+            response.setHereditaryDiseases(Arrays.asList(assessment.getHereditaryDiseases().split(",")));
+        } else {
+            response.setHereditaryDiseases(Arrays.asList("None"));
+        }
+        
         response.setNumberOfDependents(assessment.getNumberOfDependents());
         response.setIsSmoker(assessment.getIsSmoker());
         response.setCity(assessment.getCity());

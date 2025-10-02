@@ -17,9 +17,10 @@ public class HealthRiskAssessmentResponse {
     private Integer age;
     private String sex;
     private Double weight;
+    private Double height;
     private Double bmi;
     @JsonProperty("hereditary_diseases")
-    private String hereditaryDiseases;
+    private List<String> hereditaryDiseases;
     @JsonProperty("number_of_dependents")
     private Integer numberOfDependents;
     @JsonProperty("is_smoker")

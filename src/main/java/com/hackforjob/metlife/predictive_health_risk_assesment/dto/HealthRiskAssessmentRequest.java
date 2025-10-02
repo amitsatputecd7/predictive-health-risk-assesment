@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,13 +27,18 @@ public class HealthRiskAssessmentRequest {
     @DecimalMax(value = "500.0", message = "Weight must be at most 500.0 kg")
     private Double weight;
     
+    @NotNull(message = "Height is required")
+    @DecimalMin(value = "0.5", message = "Height must be at least 0.5 meters")
+    @DecimalMax(value = "3.0", message = "Height must be at most 3.0 meters")
+    private Double height;
+    
     @NotNull(message = "BMI is required")
     @DecimalMin(value = "10.0", message = "BMI must be at least 10.0")
     @DecimalMax(value = "50.0", message = "BMI must be at most 50.0")
     private Double bmi;
     
     @JsonProperty("hereditary_diseases")
-    private String hereditaryDiseases;
+    private List<String> hereditaryDiseases;
     
     @NotNull(message = "Number of dependents is required")
     @Min(value = 0, message = "Number of dependents cannot be negative")
@@ -66,4 +73,7 @@ public class HealthRiskAssessmentRequest {
     @Size(max = 100, message = "Job title must not exceed 100 characters")
     @JsonProperty("job_title")
     private String jobTitle;
+    
+    @JsonProperty("userId")
+    private Long userId;
 }
