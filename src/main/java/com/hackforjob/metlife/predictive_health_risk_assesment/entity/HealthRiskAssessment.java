@@ -95,6 +95,11 @@ public class HealthRiskAssessment {
     @Column(name = "risk_category")
     private String riskCategory; // LOW, MEDIUM, HIGH
     
+    // User relationship - Many assessments can belong to one user
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_user_id"))
+    private User user;
+    
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;

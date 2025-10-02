@@ -25,11 +25,11 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest loginRequest) {
         try {
-            log.info("Login request received for email: {}", loginRequest.getEmail());
+            log.info("Login request received for username: {}", loginRequest.getUsername());
             LoginResponse response = authService.login(loginRequest);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
-            log.error("Login failed for email: {}", loginRequest.getEmail(), e);
+            log.error("Login failed for username: {}", loginRequest.getUsername(), e);
             ErrorResponse errorResponse = ErrorResponse.builder()
                     .status(HttpStatus.UNAUTHORIZED.value())
                     .error("Login Failed")

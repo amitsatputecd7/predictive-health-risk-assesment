@@ -9,7 +9,7 @@
 [INFO] 
 [INFO] --- resources:3.3.1:resources (default-resources) @ predictive-health-risk-assesment ---
 [INFO] Copying 1 resource from src/main/resources to target/classes
-[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
 [INFO] 
 [INFO] --- compiler:3.14.0:compile (default-compile) @ predictive-health-risk-assesment ---
 [INFO] Nothing to compile - all classes are up to date.
@@ -35,184 +35,124 @@
 
  :: Spring Boot ::                (v3.5.6)
 
-2025-09-27T14:23:39.282+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] PredictiveHealthRiskAssesmentApplication : Starting PredictiveHealthRiskAssesmentApplication using Java 21.0.5 with PID 58505 (/Users/amitsatpute/VscodeProjects/predictive-health-risk-assesment/target/classes started by amitsatpute in /Users/amitsatpute/VscodeProjects/predictive-health-risk-assesment)
-2025-09-27T14:23:39.283+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [           main] PredictiveHealthRiskAssesmentApplication : Running with Spring Boot v3.5.6, Spring v6.2.11
-2025-09-27T14:23:39.283+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] PredictiveHealthRiskAssesmentApplication : No active profile set, falling back to 1 default profile: "default"
-2025-09-27T14:23:39.499+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-27T14:23:39.518+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 2 JPA repository interfaces.
-2025-09-27T14:23:39.677+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-27T14:23:39.682+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-27T14:23:39.682+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
-2025-09-27T14:23:39.697+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-27T14:23:39.698+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 401 ms
-2025-09-27T14:23:39.713+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [           main] c.h.m.p.config.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
-2025-09-27T14:23:39.774+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-27T14:23:39.792+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
-2025-09-27T14:23:39.801+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-27T14:23:39.882+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-27T14:23:39.891+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-27T14:23:40.559+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: f1b0c4fe-793f-4d4a-9c94-cefd92d11acb
-2025-09-27T14:23:40.560+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-27T14:23:40.612+05:30  WARN 58505 --- [predictive-health-risk-assessment] [           main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-09-27T14:23:40.698+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-10-02T13:06:18.940+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] PredictiveHealthRiskAssesmentApplication : Starting PredictiveHealthRiskAssesmentApplication using Java 21.0.5 with PID 50504 (/Users/amitsatpute/VscodeProjects/predictive-health-risk-assesment/target/classes started by amitsatpute in /Users/amitsatpute/VscodeProjects/predictive-health-risk-assesment)
+2025-10-02T13:06:18.941+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [           main] PredictiveHealthRiskAssesmentApplication : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-10-02T13:06:18.941+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] PredictiveHealthRiskAssesmentApplication : No active profile set, falling back to 1 default profile: "default"
+2025-10-02T13:06:19.161+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-02T13:06:19.181+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 2 JPA repository interfaces.
+2025-10-02T13:06:19.358+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-02T13:06:19.363+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-02T13:06:19.363+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-02T13:06:19.379+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-02T13:06:19.380+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 426 ms
+2025-10-02T13:06:19.398+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [           main] c.h.m.p.config.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2025-10-02T13:06:19.434+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-02T13:06:19.450+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-02T13:06:19.459+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-02T13:06:19.545+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-02T13:06:19.554+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-02T13:06:19.592+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ced17f3
+2025-10-02T13:06:19.593+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-02T13:06:19.607+05:30  WARN 50504 --- [predictive-health-risk-assessment] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-02T13:06:19.612+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
-	Database version: 17.0
+	Database version: 15.14
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-27T14:23:40.987+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-27T14:23:41.193+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-27T14:23:41.320+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-09-27T14:23:41.696+05:30  WARN 58505 --- [predictive-health-risk-assessment] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-27T14:23:41.720+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
-2025-09-27T14:23:41.742+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [           main] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
-2025-09-27T14:23:41.748+05:30  WARN 58505 --- [predictive-health-risk-assessment] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+2025-10-02T13:06:19.911+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-02T13:06:20.017+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-02T13:06:20.145+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-02T13:06:20.541+05:30  WARN 50504 --- [predictive-health-risk-assessment] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-02T13:06:20.567+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2025-10-02T13:06:20.589+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [           main] o.s.w.s.c.annotation.WebMvcConfigurer    : Default resource handling disabled
+2025-10-02T13:06:20.595+05:30  WARN 50504 --- [predictive-health-risk-assessment] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 55fef9e4-0c9d-4190-b480-30187e368eff
+Using generated security password: 73178d49-e0ef-4d2c-81ec-74083dc40cb7
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-09-27T14:23:41.750+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2025-09-27T14:23:41.800+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-09-27T14:23:41.815+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-09-27T14:23:41.844+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-27T14:23:41.847+05:30  INFO 58505 --- [predictive-health-risk-assessment] [           main] PredictiveHealthRiskAssesmentApplication : Started PredictiveHealthRiskAssesmentApplication in 2.69 seconds (process running for 2.789)
-2025-09-27T14:23:53.651+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-27T14:23:53.651+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-27T14:23:53.652+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2025-09-27T14:23:53.652+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2025-09-27T14:23:53.652+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2025-09-27T14:23:53.652+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@59d0f14b
-2025-09-27T14:23:53.652+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6c743da
-2025-09-27T14:23:53.652+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2025-09-27T14:23:53.652+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-09-27T14:23:53.663+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
-2025-09-27T14:23:53.664+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController#login(LoginRequest)
-2025-09-27T14:23:53.695+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest(email=john.doe@example.com, userId=123)]
-2025-09-27T14:23:53.705+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] c.h.m.p.controller.AuthController        : Login request received for email: john.doe@example.com
-2025-09-27T14:23:53.780+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] c.h.m.p.service.AuthService              : Login attempt for email: john.doe@example.com with userId: 123
-2025-09-27T14:23:53.808+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] org.hibernate.SQL                        : 
+2025-10-02T13:06:20.597+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-02T13:06:20.650+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-10-02T13:06:20.665+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-10-02T13:06:20.701+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-02T13:06:20.704+05:30  INFO 50504 --- [predictive-health-risk-assessment] [           main] PredictiveHealthRiskAssesmentApplication : Started PredictiveHealthRiskAssesmentApplication in 1.889 seconds (process running for 1.991)
+2025-10-02T13:06:35.136+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-02T13:06:35.136+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-02T13:06:35.136+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-10-02T13:06:35.136+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-10-02T13:06:35.136+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-10-02T13:06:35.137+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7c7aef90
+2025-10-02T13:06:35.137+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7dae9ff4
+2025-10-02T13:06:35.137+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-10-02T13:06:35.137+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-02T13:06:35.149+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/register", parameters={}
+2025-10-02T13:06:35.150+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController#register(UserRegistrationRequest)
+2025-10-02T13:06:35.183+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(username=testuser3, email=testuser3@example.com, password=password123)]
+2025-10-02T13:06:35.198+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] c.h.m.p.controller.AuthController        : Registration request received for email: testuser3@example.com
+2025-10-02T13:06:35.203+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] c.h.m.p.service.AuthService              : Registering new user with username: testuser3 and email: testuser3@example.com
+2025-10-02T13:06:35.227+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] org.hibernate.SQL                        : 
     /* <criteria> */ select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.updated_at,
-        u1_0.username 
+        u1_0.id 
     from
         users u1_0 
     where
-        u1_0.email=?
+        u1_0.email=? 
+    fetch
+        first ? rows only
 Hibernate: 
     /* <criteria> */ select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.updated_at,
-        u1_0.username 
+        u1_0.id 
     from
         users u1_0 
     where
-        u1_0.email=?
-2025-09-27T14:23:53.856+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] org.hibernate.SQL                        : 
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2025-10-02T13:06:35.233+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] org.hibernate.SQL                        : 
     /* <criteria> */ select
-        top (?) u1_0.id 
+        u1_0.id 
     from
         users u1_0 
     where
-        u1_0.username=?
+        u1_0.username=? 
+    fetch
+        first ? rows only
 Hibernate: 
     /* <criteria> */ select
-        top (?) u1_0.id 
+        u1_0.id 
     from
         users u1_0 
     where
-        u1_0.username=?
-2025-09-27T14:23:53.909+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] org.hibernate.SQL                        : 
+        u1_0.username=? 
+    fetch
+        first ? rows only
+2025-10-02T13:06:35.313+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] org.hibernate.SQL                        : 
     /* insert for
         com.hackforjob.metlife.predictive_health_risk_assesment.entity.User */insert 
     into
-        users (created_at, email, first_name, is_active, last_name, updated_at, username) 
+        users (created_at, email, first_name, is_active, last_name, password, updated_at, username) 
     values
-        (?, ?, ?, ?, ?, ?, ?)
+        (?, ?, ?, ?, ?, ?, ?, ?)
 Hibernate: 
     /* insert for
         com.hackforjob.metlife.predictive_health_risk_assesment.entity.User */insert 
     into
-        users (created_at, email, first_name, is_active, last_name, updated_at, username) 
+        users (created_at, email, first_name, is_active, last_name, password, updated_at, username) 
     values
-        (?, ?, ?, ?, ?, ?, ?)
-2025-09-27T14:23:53.953+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] c.h.m.p.service.AuthService              : New user created: john.doe
-2025-09-27T14:23:54.086+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-09-27T14:23:54.087+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponse(token=eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiam9obi5kb2UiLCJzdWIiOiJqb2h (truncated)...]
-2025-09-27T14:23:54.090+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-09-27T14:24:10.854+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/register", parameters={}
-2025-09-27T14:24:10.855+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController#register(UserRegistrationRequest)
-2025-09-27T14:24:10.856+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(email=newuser@example.com, username=newuser, firstName=New, lastName=User)]
-2025-09-27T14:24:10.857+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.controller.AuthController        : Registration request received for email: newuser@example.com
-2025-09-27T14:24:10.942+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.service.AuthService              : Registering new user with email: newuser@example.com
-2025-09-27T14:24:10.943+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] org.hibernate.SQL                        : 
-    /* <criteria> */ select
-        top (?) u1_0.id 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-Hibernate: 
-    /* <criteria> */ select
-        top (?) u1_0.id 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-2025-09-27T14:24:10.989+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] org.hibernate.SQL                        : 
-    /* <criteria> */ select
-        top (?) u1_0.id 
-    from
-        users u1_0 
-    where
-        u1_0.username=?
-Hibernate: 
-    /* <criteria> */ select
-        top (?) u1_0.id 
-    from
-        users u1_0 
-    where
-        u1_0.username=?
-2025-09-27T14:24:11.027+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] org.hibernate.SQL                        : 
-    /* insert for
-        com.hackforjob.metlife.predictive_health_risk_assesment.entity.User */insert 
-    into
-        users (created_at, email, first_name, is_active, last_name, updated_at, username) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    /* insert for
-        com.hackforjob.metlife.predictive_health_risk_assesment.entity.User */insert 
-    into
-        users (created_at, email, first_name, is_active, last_name, updated_at, username) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-2025-09-27T14:24:11.075+05:30  INFO 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.service.AuthService              : User registered successfully: newuser
-2025-09-27T14:24:11.162+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-09-27T14:24:11.162+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponse(token=null, tokenType=Bearer, userId=2, email=newuser@example.com, username=newuser, m (truncated)...]
-2025-09-27T14:24:11.165+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2025-09-27T14:24:22.370+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-4] c.h.m.p.config.JwtAuthenticationFilter   : Authentication set for user: john.doe@example.com
-2025-09-27T14:24:22.371+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/auth/validate-token", parameters={}
-2025-09-27T14:24:22.371+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController#validateToken(String)
-2025-09-27T14:24:22.376+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-09-27T14:24:22.376+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponse(token=null, tokenType=Bearer, userId=1, email=john.doe@example.com, username=null, mes (truncated)...]
-2025-09-27T14:24:22.377+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-09-27T14:24:32.554+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/auth/user/1", parameters={}
-2025-09-27T14:24:32.555+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController#getUserById(Long)
-2025-09-27T14:24:32.646+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-6] org.hibernate.SQL                        : 
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-02T13:06:35.318+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] c.h.m.p.service.AuthService              : User registered successfully: testuser3
+2025-10-02T13:06:35.327+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:06:35.327+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponse(token=null, tokenType=Bearer, userId=4, email=testuser3@example.com, username=testuser (truncated)...]
+2025-10-02T13:06:35.331+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-10-02T13:06:46.001+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/health-risk-assessment", parameters={}
+2025-10-02T13:06:46.002+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.HealthRiskAssessmentController#createAssessment(HealthRiskAssessmentRequest)
+2025-10-02T13:06:46.032+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [HealthRiskAssessmentRequest(age=35, sex=MALE, weight=75.0, height=1.8, bmi=23.1, hereditaryDiseases= (truncated)...]
+2025-10-02T13:06:46.038+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.c.HealthRiskAssessmentController : Received request to create health risk assessment
+2025-10-02T13:06:46.039+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.s.HealthRiskAssessmentService    : Creating health risk assessment for age: 35, city: New York, userId: 4
+2025-10-02T13:06:46.044+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] org.hibernate.SQL                        : 
     select
         u1_0.id,
         u1_0.created_at,
@@ -220,6 +160,7 @@ Hibernate:
         u1_0.first_name,
         u1_0.is_active,
         u1_0.last_name,
+        u1_0.password,
         u1_0.updated_at,
         u1_0.username 
     from
@@ -234,146 +175,419 @@ Hibernate:
         u1_0.first_name,
         u1_0.is_active,
         u1_0.last_name,
+        u1_0.password,
         u1_0.updated_at,
         u1_0.username 
     from
         users u1_0 
     where
         u1_0.id=?
-2025-09-27T14:24:32.764+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-09-27T14:24:32.764+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponse(token=null, tokenType=Bearer, userId=1, email=john.doe@example.com, username=john.doe, (truncated)...]
-2025-09-27T14:24:32.765+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-09-27T14:32:33.457+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/auth/login", parameters={}
-2025-09-27T14:32:33.460+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hackforjob.metlife.predictive_health_risk_assesment.exception.GlobalExceptionHandler#handleGlobalException(Exception, WebRequest)
-2025-09-27T14:32:33.463+05:30 ERROR 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-8] c.h.m.p.e.GlobalExceptionHandler         : Unexpected error: 
-
-org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:267) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:127) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:509) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1284) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.46.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.46.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at com.hackforjob.metlife.predictive_health_risk_assesment.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:61) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.5.jar:6.5.5]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.5.jar:6.5.5]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.5.jar:6.5.5]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2025-09-27T14:32:33.472+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-09-27T14:32:33.474+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(timestamp=2025-09-27T14:32:33.463207, status=500, error=Internal Server Error, message (truncated)...]
-2025-09-27T14:32:33.476+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2025-09-27T14:32:33.476+05:30 DEBUG 58505 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
-2025-09-27T14:33:46.567+05:30  INFO 58505 --- [predictive-health-risk-assessment] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-27T14:33:46.574+05:30  INFO 58505 --- [predictive-health-risk-assessment] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-27T14:33:46.579+05:30  INFO 58505 --- [predictive-health-risk-assessment] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-27T14:33:46.582+05:30  INFO 58505 --- [predictive-health-risk-assessment] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-27T14:33:46.586+05:30  INFO 58505 --- [predictive-health-risk-assessment] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  10:08 min
-[INFO] Finished at: 2025-09-27T14:33:46+05:30
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.6:run (default-cli) on project predictive-health-risk-assesment: Process terminated with exit code: 143 -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+2025-10-02T13:06:46.054+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.s.HealthRiskAssessmentService    : Associated assessment with user: testuser3
+2025-10-02T13:06:46.055+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    /* insert for
+        com.hackforjob.metlife.predictive_health_risk_assesment.entity.HealthRiskAssessment */insert 
+    into
+        health_risk_assessments (age, blood_pressure, bmi, city, created_at, has_diabetes, height, hereditary_diseases, is_smoker, job_title, number_of_dependents, regular_exercise, risk_category, risk_score, sex, updated_at, user_id, weight) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    /* insert for
+        com.hackforjob.metlife.predictive_health_risk_assesment.entity.HealthRiskAssessment */insert 
+    into
+        health_risk_assessments (age, blood_pressure, bmi, city, created_at, has_diabetes, height, hereditary_diseases, is_smoker, job_title, number_of_dependents, regular_exercise, risk_category, risk_score, sex, updated_at, user_id, weight) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-02T13:06:46.057+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.s.HealthRiskAssessmentService    : Created assessment with ID: 57 and risk score: 27.0
+2025-10-02T13:06:46.067+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:06:46.069+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [HealthRiskAssessmentResponse(id=57, age=35, sex=MALE, weight=75.0, height=1.8, bmi=23.1, hereditaryD (truncated)...]
+2025-10-02T13:06:46.073+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-10-02T13:06:53.647+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/health-risk-assessment/user/4", parameters={}
+2025-10-02T13:06:53.647+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.HealthRiskAssessmentController#getAssessmentsByUserId(Long)
+2025-10-02T13:06:53.648+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-4] c.h.m.p.c.HealthRiskAssessmentController : Received request to get health risk assessments for user id: 4
+2025-10-02T13:06:53.649+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-02T13:06:53.655+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-4] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        hra1_0.id,
+        hra1_0.age,
+        hra1_0.blood_pressure,
+        hra1_0.bmi,
+        hra1_0.city,
+        hra1_0.created_at,
+        hra1_0.has_diabetes,
+        hra1_0.height,
+        hra1_0.hereditary_diseases,
+        hra1_0.is_smoker,
+        hra1_0.job_title,
+        hra1_0.number_of_dependents,
+        hra1_0.regular_exercise,
+        hra1_0.risk_category,
+        hra1_0.risk_score,
+        hra1_0.sex,
+        hra1_0.updated_at,
+        hra1_0.user_id,
+        hra1_0.weight 
+    from
+        health_risk_assessments hra1_0 
+    where
+        hra1_0.user_id=?
+Hibernate: 
+    /* <criteria> */ select
+        hra1_0.id,
+        hra1_0.age,
+        hra1_0.blood_pressure,
+        hra1_0.bmi,
+        hra1_0.city,
+        hra1_0.created_at,
+        hra1_0.has_diabetes,
+        hra1_0.height,
+        hra1_0.hereditary_diseases,
+        hra1_0.is_smoker,
+        hra1_0.job_title,
+        hra1_0.number_of_dependents,
+        hra1_0.regular_exercise,
+        hra1_0.risk_category,
+        hra1_0.risk_score,
+        hra1_0.sex,
+        hra1_0.updated_at,
+        hra1_0.user_id,
+        hra1_0.weight 
+    from
+        health_risk_assessments hra1_0 
+    where
+        hra1_0.user_id=?
+2025-10-02T13:06:53.660+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:06:53.660+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[HealthRiskAssessmentResponse(id=57, age=35, sex=MALE, weight=75.0, height=1.8, bmi=23.1, hereditary (truncated)...]
+2025-10-02T13:06:53.661+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-10-02T13:07:33.008+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/health-risk-assessment", parameters={}
+2025-10-02T13:07:33.009+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.HealthRiskAssessmentController#createAssessment(HealthRiskAssessmentRequest)
+2025-10-02T13:07:33.014+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [HealthRiskAssessmentRequest(age=40, sex=MALE, weight=80.0, height=1.8, bmi=24.7, hereditaryDiseases= (truncated)...]
+2025-10-02T13:07:33.015+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] c.h.m.p.c.HealthRiskAssessmentController : Received request to create health risk assessment
+2025-10-02T13:07:33.017+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] c.h.m.p.s.HealthRiskAssessmentService    : Creating health risk assessment for age: 40, city: San Francisco, userId: 4
+2025-10-02T13:07:33.021+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-02T13:07:33.023+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] c.h.m.p.s.HealthRiskAssessmentService    : Associated assessment with user: testuser3
+2025-10-02T13:07:33.023+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] org.hibernate.SQL                        : 
+    /* insert for
+        com.hackforjob.metlife.predictive_health_risk_assesment.entity.HealthRiskAssessment */insert 
+    into
+        health_risk_assessments (age, blood_pressure, bmi, city, created_at, has_diabetes, height, hereditary_diseases, is_smoker, job_title, number_of_dependents, regular_exercise, risk_category, risk_score, sex, updated_at, user_id, weight) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    /* insert for
+        com.hackforjob.metlife.predictive_health_risk_assesment.entity.HealthRiskAssessment */insert 
+    into
+        health_risk_assessments (age, blood_pressure, bmi, city, created_at, has_diabetes, height, hereditary_diseases, is_smoker, job_title, number_of_dependents, regular_exercise, risk_category, risk_score, sex, updated_at, user_id, weight) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-02T13:07:33.025+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] c.h.m.p.s.HealthRiskAssessmentService    : Created assessment with ID: 58 and risk score: 78.0
+2025-10-02T13:07:33.026+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:07:33.027+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [HealthRiskAssessmentResponse(id=58, age=40, sex=MALE, weight=80.0, height=1.8, bmi=24.7, hereditaryD (truncated)...]
+2025-10-02T13:07:33.028+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-10-02T13:07:40.058+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/health-risk-assessment/user/4", parameters={}
+2025-10-02T13:07:40.059+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.HealthRiskAssessmentController#getAssessmentsByUserId(Long)
+2025-10-02T13:07:40.059+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] c.h.m.p.c.HealthRiskAssessmentController : Received request to get health risk assessments for user id: 4
+2025-10-02T13:07:40.060+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-10-02T13:07:40.064+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        hra1_0.id,
+        hra1_0.age,
+        hra1_0.blood_pressure,
+        hra1_0.bmi,
+        hra1_0.city,
+        hra1_0.created_at,
+        hra1_0.has_diabetes,
+        hra1_0.height,
+        hra1_0.hereditary_diseases,
+        hra1_0.is_smoker,
+        hra1_0.job_title,
+        hra1_0.number_of_dependents,
+        hra1_0.regular_exercise,
+        hra1_0.risk_category,
+        hra1_0.risk_score,
+        hra1_0.sex,
+        hra1_0.updated_at,
+        hra1_0.user_id,
+        hra1_0.weight 
+    from
+        health_risk_assessments hra1_0 
+    where
+        hra1_0.user_id=?
+Hibernate: 
+    /* <criteria> */ select
+        hra1_0.id,
+        hra1_0.age,
+        hra1_0.blood_pressure,
+        hra1_0.bmi,
+        hra1_0.city,
+        hra1_0.created_at,
+        hra1_0.has_diabetes,
+        hra1_0.height,
+        hra1_0.hereditary_diseases,
+        hra1_0.is_smoker,
+        hra1_0.job_title,
+        hra1_0.number_of_dependents,
+        hra1_0.regular_exercise,
+        hra1_0.risk_category,
+        hra1_0.risk_score,
+        hra1_0.sex,
+        hra1_0.updated_at,
+        hra1_0.user_id,
+        hra1_0.weight 
+    from
+        health_risk_assessments hra1_0 
+    where
+        hra1_0.user_id=?
+2025-10-02T13:07:40.067+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:07:40.067+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[HealthRiskAssessmentResponse(id=57, age=35, sex=MALE, weight=75.0, height=1.8, bmi=23.1, hereditary (truncated)...]
+2025-10-02T13:07:40.068+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-10-02T13:10:03.468+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/register", parameters={}
+2025-10-02T13:10:03.469+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController#register(UserRegistrationRequest)
+2025-10-02T13:10:03.475+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(username=null, email=john.ba3939r@example.com, password=mypassword123)]
+2025-10-02T13:10:03.494+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hackforjob.metlife.predictive_health_risk_assesment.exception.GlobalExceptionHandler#handleValidationExceptions(MethodArgumentNotValidException, WebRequest)
+2025-10-02T13:10:03.496+05:30 ERROR 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] c.h.m.p.e.GlobalExceptionHandler         : Validation error: {username=Username is required}
+2025-10-02T13:10:03.498+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:10:03.500+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(timestamp=2025-10-02T13:10:03.496119, status=400, error=Validation Failed, message=Inv (truncated)...]
+2025-10-02T13:10:03.504+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController.register(com.hackforjob.metlife.predictive_health_risk_assesment.dto.UserRegistrationRequest): [Field error in object 'userRegistrationRequest' on field 'username': rejected value [null]; codes [NotBlank.userRegistrationRequest.username,NotBlank.username,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userRegistrationRequest.username,username]; arguments []; default message [username]]; default message [Username is required]] ]
+2025-10-02T13:10:03.504+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-10-02T13:11:02.791+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/register", parameters={}
+2025-10-02T13:11:02.792+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController#register(UserRegistrationRequest)
+2025-10-02T13:11:02.797+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(username=testuser4, email=testuser4@example.com, password=password123)]
+2025-10-02T13:11:02.799+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.controller.AuthController        : Registration request received for email: testuser4@example.com
+2025-10-02T13:11:02.800+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.service.AuthService              : Registering new user with username: testuser4 and email: testuser4@example.com
+2025-10-02T13:11:02.805+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    /* <criteria> */ select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2025-10-02T13:11:02.810+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    /* <criteria> */ select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+    fetch
+        first ? rows only
+2025-10-02T13:11:02.908+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    /* insert for
+        com.hackforjob.metlife.predictive_health_risk_assesment.entity.User */insert 
+    into
+        users (created_at, email, first_name, is_active, last_name, password, updated_at, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    /* insert for
+        com.hackforjob.metlife.predictive_health_risk_assesment.entity.User */insert 
+    into
+        users (created_at, email, first_name, is_active, last_name, password, updated_at, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-02T13:11:02.912+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] c.h.m.p.service.AuthService              : User registered successfully: testuser4
+2025-10-02T13:11:02.913+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:11:02.913+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponse(token=null, tokenType=Bearer, userId=5, email=testuser4@example.com, username=testuser (truncated)...]
+2025-10-02T13:11:02.914+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-10-02T13:13:51.850+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/health-risk-assessment", parameters={}
+2025-10-02T13:13:51.853+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.HealthRiskAssessmentController#getAllAssessments()
+2025-10-02T13:13:51.858+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] c.h.m.p.c.HealthRiskAssessmentController : Received request to get all health risk assessments
+2025-10-02T13:13:51.866+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        hra1_0.id,
+        hra1_0.age,
+        hra1_0.blood_pressure,
+        hra1_0.bmi,
+        hra1_0.city,
+        hra1_0.created_at,
+        hra1_0.has_diabetes,
+        hra1_0.height,
+        hra1_0.hereditary_diseases,
+        hra1_0.is_smoker,
+        hra1_0.job_title,
+        hra1_0.number_of_dependents,
+        hra1_0.regular_exercise,
+        hra1_0.risk_category,
+        hra1_0.risk_score,
+        hra1_0.sex,
+        hra1_0.updated_at,
+        hra1_0.user_id,
+        hra1_0.weight 
+    from
+        health_risk_assessments hra1_0
+Hibernate: 
+    /* <criteria> */ select
+        hra1_0.id,
+        hra1_0.age,
+        hra1_0.blood_pressure,
+        hra1_0.bmi,
+        hra1_0.city,
+        hra1_0.created_at,
+        hra1_0.has_diabetes,
+        hra1_0.height,
+        hra1_0.hereditary_diseases,
+        hra1_0.is_smoker,
+        hra1_0.job_title,
+        hra1_0.number_of_dependents,
+        hra1_0.regular_exercise,
+        hra1_0.risk_category,
+        hra1_0.risk_score,
+        hra1_0.sex,
+        hra1_0.updated_at,
+        hra1_0.user_id,
+        hra1_0.weight 
+    from
+        health_risk_assessments hra1_0
+2025-10-02T13:13:51.896+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:13:51.897+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[HealthRiskAssessmentResponse(id=1, age=35, sex=MALE, weight=75.0, height=1.75, bmi=25.5, hereditary (truncated)...]
+2025-10-02T13:13:51.899+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-10-02T13:14:02.821+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2025-10-02T13:14:02.821+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hackforjob.metlife.predictive_health_risk_assesment.controller.AuthController#login(LoginRequest)
+2025-10-02T13:14:02.823+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest(username=testuser3, password=password123)]
+2025-10-02T13:14:02.825+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] c.h.m.p.controller.AuthController        : Login request received for username: testuser3
+2025-10-02T13:14:02.826+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] c.h.m.p.service.AuthService              : Login attempt for username: testuser3
+2025-10-02T13:14:02.827+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] org.hibernate.SQL                        : 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-02T13:14:02.898+05:30  INFO 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] c.h.m.p.service.AuthService              : Login successful for user: testuser3
+2025-10-02T13:14:02.943+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-02T13:14:02.943+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponse(token=eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjQsInVzZXJuYW1lIjoidGVzdHVzZXIzIiwic3ViIjoidGV (truncated)...]
+2025-10-02T13:14:02.943+05:30 DEBUG 50504 --- [predictive-health-risk-assessment] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-10-02T13:19:50.765+05:30  INFO 50504 --- [predictive-health-risk-assessment] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-02T13:19:52.783+05:30  INFO 50504 --- [predictive-health-risk-assessment] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-02T13:19:52.793+05:30  INFO 50504 --- [predictive-health-risk-assessment] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-02T13:19:52.802+05:30  INFO 50504 --- [predictive-health-risk-assessment] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-02T13:19:52.806+05:30  INFO 50504 --- [predictive-health-risk-assessment] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

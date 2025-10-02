@@ -3,7 +3,9 @@ package com.hackforjob.metlife.predictive_health_risk_assesment.service;
 import com.hackforjob.metlife.predictive_health_risk_assesment.dto.HealthRiskAssessmentRequest;
 import com.hackforjob.metlife.predictive_health_risk_assesment.dto.HealthRiskAssessmentResponse;
 import com.hackforjob.metlife.predictive_health_risk_assesment.entity.HealthRiskAssessment;
+import com.hackforjob.metlife.predictive_health_risk_assesment.entity.User;
 import com.hackforjob.metlife.predictive_health_risk_assesment.repository.HealthRiskAssessmentRepository;
+import com.hackforjob.metlife.predictive_health_risk_assesment.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,12 +24,22 @@ import java.util.stream.Collectors;
 public class HealthRiskAssessmentService {
     
     private final HealthRiskAssessmentRepository repository;
+    private final UserRepository userRepository;
     private final Random random = new Random();
     
     public HealthRiskAssessmentResponse createAssessment(HealthRiskAssessmentRequest request) {
-        log.info("Creating health risk assessment for age: {}, city: {}", request.getAge(), request.getCity());
+        log.info("Creating health risk assessment for age: {}, city: {}, userId: {}", 
+                request.getAge(), request.getCity(), request.getUserId());
         
         HealthRiskAssessment assessment = mapToEntity(request);
+        
+        // Associate with user if userId is provided
+        if (request.getUserId() != null) {
+            User user = userRepository.findById(request.getUserId())
+                    .orElseThrow(() -> new RuntimeException("User not found with id: " + request.getUserId()));
+            assessment.setUser(user);
+            log.info("Associated assessment with user: {}", user.getUsername());
+        }
         
         // Calculate risk score and category
         calculateRiskScore(assessment);
@@ -93,6 +105,16 @@ public class HealthRiskAssessmentService {
     @Transactional(readOnly = true)
     public List<HealthRiskAssessmentResponse> getHighRiskAssessments() {
         return repository.findHighRiskAssessments(70.0).stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+    
+    @Transactional(readOnly = true)
+    public List<HealthRiskAssessmentResponse> getAssessmentsByUserId(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
+        
+        return repository.findByUser(user).stream()
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
     }

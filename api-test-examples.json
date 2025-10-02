@@ -1,0 +1,96 @@
+{
+  "authentication_examples": {
+    "registration": {
+      "endpoint": "POST /api/v1/auth/register",
+      "description": "Register a new user with username, email, and password",
+      "request_body": {
+        "username": "johnsmith",
+        "email": "john.smith@example.com",
+        "password": "securepassword123"
+      },
+      "success_response": {
+        "status": 201,
+        "body": {
+          "token_type": "Bearer",
+          "user_id": 1,
+          "email": "john.smith@example.com",
+          "username": "johnsmith",
+          "message": "User registered successfully"
+        }
+      },
+      "curl_example": "curl -X POST http://localhost:8080/api/v1/auth/register -H \"Content-Type: application/json\" -d '{\"username\": \"johnsmith\", \"email\": \"john.smith@example.com\", \"password\": \"securepassword123\"}'"
+    },
+    "login": {
+      "endpoint": "POST /api/v1/auth/login",
+      "description": "Login with username and password to get JWT token",
+      "request_body": {
+        "username": "johnsmith",
+        "password": "securepassword123"
+      },
+      "success_response": {
+        "status": 200,
+        "body": {
+          "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiam9obnNtaXRoIiwic3ViIjoiam9obi5zbWl0aEBleGFtcGxlLmNvbSIsImlhdCI6MTc1OTM4OTkyNywiZXhwIjoxNzU5MzkwMDEzfQ...",
+          "token_type": "Bearer",
+          "user_id": 1,
+          "email": "john.smith@example.com",
+          "username": "johnsmith",
+          "message": "Login successful"
+        }
+      },
+      "error_response": {
+        "status": 401,
+        "body": {
+          "status": 401,
+          "error": "Login Failed",
+          "message": "Invalid username or password",
+          "path": "/api/v1/auth/login"
+        }
+      },
+      "curl_example": "curl -X POST http://localhost:8080/api/v1/auth/login -H \"Content-Type: application/json\" -d '{\"username\": \"johnsmith\", \"password\": \"securepassword123\"}'"
+    }
+  },
+  "health_assessment_example": {
+    "endpoint": "POST /api/v1/health-risk-assessment",
+    "description": "Create a health risk assessment (authentication required)",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9...",
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "age": 30,
+      "sex": "MALE",
+      "weight": 64,
+      "height": 1.70,
+      "bmi": 25.5,
+      "hereditary_diseases": ["None"],
+      "number_of_dependents": 2,
+      "is_smoker": false,
+      "city": "Mumbai",
+      "blood_pressure": "NORMAL",
+      "has_diabetes": "Yes",
+      "userId": 1,
+      "regular_exercise": "yes",
+      "job_title": "Software Engineer"
+    },
+    "curl_example": "curl -X POST http://localhost:8080/api/v1/health-risk-assessment -H \"Authorization: Bearer YOUR_JWT_TOKEN\" -H \"Content-Type: application/json\" -d @health-assessment-request.json"
+  },
+  "validation_rules": {
+    "registration": {
+      "username": "Required, not blank, unique",
+      "email": "Required, valid email format, unique",
+      "password": "Required, not blank, encrypted with BCrypt"
+    },
+    "login": {
+      "username": "Required, not blank",
+      "password": "Required, not blank, validated against encrypted password"
+    }
+  },
+  "security_features": {
+    "password_encryption": "BCrypt with salt",
+    "jwt_algorithm": "HS512",
+    "token_expiration": "Configurable (default: 24 hours)",
+    "authentication_errors": "Returns 401 for invalid credentials",
+    "duplicate_prevention": "Prevents duplicate usernames and emails"
+  }
+}

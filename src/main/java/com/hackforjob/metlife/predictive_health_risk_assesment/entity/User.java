@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -31,6 +32,10 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
     
+    @NotBlank(message = "Password is required")
+    @Column(nullable = false)
+    private String password;
+    
     @Column(name = "first_name")
     private String firstName;
     
@@ -48,9 +53,20 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
     
+    // One user can have many health risk assessments
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<HealthRiskAssessment> healthRiskAssessments;
+    
     public User(String email, String username) {
         this.email = email;
         this.username = username;
+        this.isActive = true;
+    }
+    
+    public User(String email, String username, String password) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
         this.isActive = true;
     }
 }
