@@ -21,6 +21,8 @@ Stores all Protected Health Information:
 - Personal information (city, job title, dependents)
 - Hereditary diseases
 
+**Note on Data Types**: The `has_diabetes` and `regular_exercise` fields use VARCHAR with mixed case values ('Yes'/'No' and 'yes'/'no') for backward compatibility with the existing API. While BOOLEAN would be more efficient, maintaining the current format ensures no breaking changes for API consumers.
+
 ### 2. `health_risk_assessments` Table (Non-PHI)
 Stores only risk assessment results:
 - Risk score (calculated value 0-100)
@@ -43,8 +45,10 @@ Stores only risk assessment results:
       │
       │ 1
       │
-      │ N
-┌─────▼────────────┐         ┌──────────────────────────┐
+      ├─────────────────────────────┐
+      │                             │
+      │ N                           │ N
+┌─────▼────────────┐         ┌──────▼───────────────────┐
 │   health_data    │    1:1  │ health_risk_assessments  │
 │                  │◄────────┤                          │
 │  id (PK)         │         │  id (PK)                 │
@@ -63,6 +67,12 @@ Stores only risk assessment results:
 │  created_at      │
 │  updated_at      │
 └──────────────────┘
+
+Relationships:
+- One User can have many HealthData records (1:N)
+- One User can have many HealthRiskAssessments (1:N)
+- One HealthData has exactly one HealthRiskAssessment (1:1)
+- One HealthRiskAssessment references exactly one HealthData (1:1)
 ```
 
 ## Benefits
