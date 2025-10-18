@@ -385,13 +385,44 @@ jwt.secret=your-secret-key
 jwt.expiration=86400
 ```
 
+## CI/CD Pipeline
+
+This project includes a comprehensive CI/CD pipeline using GitHub Actions for automated building, testing, and deployment across multiple environments.
+
+### Workflows
+
+- **CI Build and Test**: Automatically runs on pull requests and pushes to validate code changes
+- **Deploy to Dev**: Automatically deploys to development environment on pushes to `develop` branch
+- **Deploy to Staging**: Deploys to staging environment on pushes to `release/*` branches
+- **Deploy to Production**: Deploys to production on GitHub releases
+
+### Environments
+
+- **Development**: Automatic deployment from `develop` branch
+- **Staging**: Deployment from `release/*` branches for pre-production testing
+- **Production**: Deployment from GitHub releases with approval workflow
+
+For detailed information about the CI/CD pipeline, see [.github/workflows/README.md](.github/workflows/README.md).
+
+### Quick Start with CI/CD
+
+1. **Development**: Push to `develop` branch to deploy to dev environment
+2. **Staging**: Create a release branch (`release/v1.0.0`) to deploy to staging
+3. **Production**: Create and publish a GitHub release to deploy to production
+
+All workflows include:
+- PostgreSQL database for testing
+- Maven build and test execution
+- Artifact generation and storage
+- Deployment notifications
+
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+5. Open a Pull Request (triggers CI workflow automatically)
 
 ## License
 
