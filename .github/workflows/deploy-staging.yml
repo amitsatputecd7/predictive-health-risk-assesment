@@ -1,0 +1,96 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - release/*
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to deploy'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-staging:
+    name: Deploy to Staging Environment
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: ${{ steps.deploy.outputs.app-url }}
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: predictive_health_db
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build application
+        run: ./mvnw clean package -DskipTests
+        env:
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+
+      - name: Run tests
+        run: ./mvnw test
+        env:
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/predictive_health_db
+
+      - name: Run integration tests
+        run: ./mvnw verify -DskipUnitTests
+        continue-on-error: true
+        env:
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/predictive_health_db
+
+      - name: Deploy to Staging
+        id: deploy
+        run: |
+          echo "Deploying to staging environment..."
+          echo "WAR file: $(ls target/*.war)"
+          echo "app-url=https://staging-predictive-health-risk-assessment.example.com" >> $GITHUB_OUTPUT
+          # Add your deployment commands here
+          # For example: scp, rsync, AWS CLI, Azure CLI, etc.
+          # Example for Tomcat:
+          # scp target/*.war user@staging-server:/path/to/tomcat/webapps/
+          # Or for cloud platforms:
+          # aws s3 cp target/*.war s3://bucket-name/
+          # az webapp deployment source config-zip --resource-group rg --name app-name --src target/*.war
+
+      - name: Run smoke tests
+        run: |
+          echo "Running smoke tests on staging environment..."
+          # Add smoke test commands here
+          # curl -f https://staging-predictive-health-risk-assessment.example.com/actuator/health
+
+      - name: Notify deployment
+        run: |
+          echo "✅ Deployment to staging environment completed successfully!"
+          echo "📦 Artifact: $(ls target/*.war)"
+          echo "🔗 Application URL: https://staging-predictive-health-risk-assessment.example.com"

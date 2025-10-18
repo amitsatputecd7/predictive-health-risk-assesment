@@ -1,0 +1,87 @@
+name: Build and Test (Reusable)
+
+on:
+  workflow_call:
+    inputs:
+      java-version:
+        description: 'Java version to use'
+        required: false
+        type: string
+        default: '21'
+      run-tests:
+        description: 'Whether to run tests'
+        required: false
+        type: boolean
+        default: true
+    outputs:
+      artifact-name:
+        description: 'Name of the generated artifact'
+        value: ${{ jobs.build.outputs.artifact-name }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
+    outputs:
+      artifact-name: ${{ steps.package.outputs.artifact-name }}
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: predictive_health_db
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ inputs.java-version }}
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build with Maven
+        run: ./mvnw clean compile -DskipTests
+        env:
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+
+      - name: Run tests
+        if: ${{ inputs.run-tests }}
+        run: ./mvnw test
+        env:
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/predictive_health_db
+
+      - name: Package application
+        id: package
+        run: |
+          ./mvnw package -DskipTests
+          ARTIFACT_NAME=$(ls target/*.war | xargs basename)
+          echo "artifact-name=$ARTIFACT_NAME" >> $GITHUB_OUTPUT
+          echo "Generated artifact: $ARTIFACT_NAME"
+        env:
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-war
+          path: target/*.war
+          retention-days: 7
