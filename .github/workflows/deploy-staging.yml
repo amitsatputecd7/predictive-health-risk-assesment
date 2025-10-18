@@ -11,6 +11,9 @@ on:
         required: false
         type: string
 
+permissions:
+  contents: read
+
 jobs:
   deploy-staging:
     name: Deploy to Staging Environment
