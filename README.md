@@ -1,5 +1,10 @@
 # Predictive Health Risk Assessment API
 
+[![CI - Build and Test](https://github.com/amitsatputecd7/predictive-health-risk-assesment/actions/workflows/ci.yml/badge.svg)](https://github.com/amitsatputecd7/predictive-health-risk-assesment/actions/workflows/ci.yml)
+[![Deploy to Dev](https://github.com/amitsatputecd7/predictive-health-risk-assesment/actions/workflows/deploy-dev.yml/badge.svg)](https://github.com/amitsatputecd7/predictive-health-risk-assesment/actions/workflows/deploy-dev.yml)
+[![Deploy to Staging](https://github.com/amitsatputecd7/predictive-health-risk-assesment/actions/workflows/deploy-staging.yml/badge.svg)](https://github.com/amitsatputecd7/predictive-health-risk-assesment/actions/workflows/deploy-staging.yml)
+[![Deploy to Production](https://github.com/amitsatputecd7/predictive-health-risk-assesment/actions/workflows/deploy-production.yml/badge.svg)](https://github.com/amitsatputecd7/predictive-health-risk-assesment/actions/workflows/deploy-production.yml)
+
 A Spring Boot REST API application that provides health risk assessment services based on user demographic and health information.
 
 ## Features
