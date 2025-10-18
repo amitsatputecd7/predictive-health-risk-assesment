@@ -53,6 +53,10 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
     
+    // One user can have many health data records
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<HealthData> healthDataRecords;
+    
     // One user can have many health risk assessments
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<HealthRiskAssessment> healthRiskAssessments;

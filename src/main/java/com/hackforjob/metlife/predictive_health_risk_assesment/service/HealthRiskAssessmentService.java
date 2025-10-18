@@ -2,8 +2,10 @@ package com.hackforjob.metlife.predictive_health_risk_assesment.service;
 
 import com.hackforjob.metlife.predictive_health_risk_assesment.dto.HealthRiskAssessmentRequest;
 import com.hackforjob.metlife.predictive_health_risk_assesment.dto.HealthRiskAssessmentResponse;
+import com.hackforjob.metlife.predictive_health_risk_assesment.entity.HealthData;
 import com.hackforjob.metlife.predictive_health_risk_assesment.entity.HealthRiskAssessment;
 import com.hackforjob.metlife.predictive_health_risk_assesment.entity.User;
+import com.hackforjob.metlife.predictive_health_risk_assesment.repository.HealthDataRepository;
 import com.hackforjob.metlife.predictive_health_risk_assesment.repository.HealthRiskAssessmentRepository;
 import com.hackforjob.metlife.predictive_health_risk_assesment.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +26,7 @@ import java.util.stream.Collectors;
 public class HealthRiskAssessmentService {
     
     private final HealthRiskAssessmentRepository repository;
+    private final HealthDataRepository healthDataRepository;
     private final UserRepository userRepository;
     private final Random random = new Random();
     
@@ -31,18 +34,29 @@ public class HealthRiskAssessmentService {
         log.info("Creating health risk assessment for age: {}, city: {}, userId: {}", 
                 request.getAge(), request.getCity(), request.getUserId());
         
-        HealthRiskAssessment assessment = mapToEntity(request);
+        // Create HealthData entity (PHI)
+        HealthData healthData = mapToHealthDataEntity(request);
         
         // Associate with user if userId is provided
         if (request.getUserId() != null) {
             User user = userRepository.findById(request.getUserId())
                     .orElseThrow(() -> new RuntimeException("User not found with id: " + request.getUserId()));
-            assessment.setUser(user);
-            log.info("Associated assessment with user: {}", user.getUsername());
+            healthData.setUser(user);
+            log.info("Associated health data with user: {}", user.getUsername());
+        }
+        
+        // Save health data first
+        HealthData savedHealthData = healthDataRepository.save(healthData);
+        
+        // Create HealthRiskAssessment entity (non-PHI)
+        HealthRiskAssessment assessment = new HealthRiskAssessment();
+        assessment.setHealthData(savedHealthData);
+        if (request.getUserId() != null) {
+            assessment.setUser(savedHealthData.getUser());
         }
         
         // Calculate risk score and category
-        calculateRiskScore(assessment);
+        calculateRiskScore(assessment, savedHealthData);
         
         HealthRiskAssessment savedAssessment = repository.save(assessment);
         
@@ -69,8 +83,13 @@ public class HealthRiskAssessmentService {
         HealthRiskAssessment existingAssessment = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Assessment not found with id: " + id));
         
-        updateEntityFromRequest(existingAssessment, request);
-        calculateRiskScore(existingAssessment);
+        // Update health data
+        HealthData healthData = existingAssessment.getHealthData();
+        updateHealthDataFromRequest(healthData, request);
+        healthDataRepository.save(healthData);
+        
+        // Recalculate risk score
+        calculateRiskScore(existingAssessment, healthData);
         
         HealthRiskAssessment updatedAssessment = repository.save(existingAssessment);
         
@@ -90,7 +109,12 @@ public class HealthRiskAssessmentService {
     
     @Transactional(readOnly = true)
     public List<HealthRiskAssessmentResponse> getAssessmentsByCity(String city) {
-        return repository.findByCity(city).stream()
+        List<HealthData> healthDataList = healthDataRepository.findAll().stream()
+                .filter(hd -> hd.getCity().equals(city))
+                .collect(Collectors.toList());
+        
+        return repository.findAll().stream()
+                .filter(assessment -> healthDataList.contains(assessment.getHealthData()))
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
     }
@@ -119,41 +143,41 @@ public class HealthRiskAssessmentService {
                 .collect(Collectors.toList());
     }
     
-    private void calculateRiskScore(HealthRiskAssessment assessment) {
+    private void calculateRiskScore(HealthRiskAssessment assessment, HealthData healthData) {
         double riskScore = 0.0;
         
         // Age factor (0-25 points)
-        if (assessment.getAge() < 30) {
+        if (healthData.getAge() < 30) {
             riskScore += 5;
-        } else if (assessment.getAge() < 50) {
+        } else if (healthData.getAge() < 50) {
             riskScore += 10;
-        } else if (assessment.getAge() < 65) {
+        } else if (healthData.getAge() < 65) {
             riskScore += 20;
         } else {
             riskScore += 25;
         }
         
         // BMI factor (0-20 points)
-        if (assessment.getBmi() < 18.5 || assessment.getBmi() > 30) {
+        if (healthData.getBmi() < 18.5 || healthData.getBmi() > 30) {
             riskScore += 20;
-        } else if (assessment.getBmi() > 25) {
+        } else if (healthData.getBmi() > 25) {
             riskScore += 10;
         } else {
             riskScore += 5;
         }
         
         // Smoking factor (0-25 points)
-        if (assessment.getIsSmoker()) {
+        if (healthData.getIsSmoker()) {
             riskScore += 25;
         }
         
         // Diabetes factor (0-20 points)
-        if ("Yes".equalsIgnoreCase(assessment.getHasDiabetes())) {
+        if ("Yes".equalsIgnoreCase(healthData.getHasDiabetes())) {
             riskScore += 20;
         }
         
         // Blood pressure factor (0-15 points)
-        switch (assessment.getBloodPressure()) {
+        switch (healthData.getBloodPressure()) {
             case "HYPERTENSION_STAGE_2":
                 riskScore += 15;
                 break;
@@ -173,19 +197,19 @@ public class HealthRiskAssessmentService {
         }
         
         // Exercise factor (0-10 points, inverted - no exercise increases risk)
-        if ("no".equalsIgnoreCase(assessment.getRegularExercise())) {
+        if ("no".equalsIgnoreCase(healthData.getRegularExercise())) {
             riskScore += 10;
         }
         
         // Hereditary diseases factor (0-10 points)
-        if (assessment.getHereditaryDiseases() != null && 
-            !assessment.getHereditaryDiseases().trim().isEmpty() && 
-            !assessment.getHereditaryDiseases().equalsIgnoreCase("None")) {
+        if (healthData.getHereditaryDiseases() != null && 
+            !healthData.getHereditaryDiseases().trim().isEmpty() && 
+            !healthData.getHereditaryDiseases().equalsIgnoreCase("None")) {
             riskScore += 10;
         }
         
         // Dependents factor (slight risk increase with more dependents due to stress)
-        if (assessment.getNumberOfDependents() > 3) {
+        if (healthData.getNumberOfDependents() > 3) {
             riskScore += 5;
         }
         
@@ -230,58 +254,60 @@ public class HealthRiskAssessmentService {
                 .collect(Collectors.toList());
     }
     
-    private HealthRiskAssessment mapToEntity(HealthRiskAssessmentRequest request) {
-        HealthRiskAssessment assessment = new HealthRiskAssessment();
-        updateEntityFromRequest(assessment, request);
-        return assessment;
+    private HealthData mapToHealthDataEntity(HealthRiskAssessmentRequest request) {
+        HealthData healthData = new HealthData();
+        updateHealthDataFromRequest(healthData, request);
+        return healthData;
     }
     
-    private void updateEntityFromRequest(HealthRiskAssessment assessment, HealthRiskAssessmentRequest request) {
-        assessment.setAge(request.getAge());
-        assessment.setSex(request.getSex());
-        assessment.setWeight(request.getWeight());
-        assessment.setHeight(request.getHeight());
-        assessment.setBmi(request.getBmi());
+    private void updateHealthDataFromRequest(HealthData healthData, HealthRiskAssessmentRequest request) {
+        healthData.setAge(request.getAge());
+        healthData.setSex(request.getSex());
+        healthData.setWeight(request.getWeight());
+        healthData.setHeight(request.getHeight());
+        healthData.setBmi(request.getBmi());
         
         // Convert List<String> to comma-separated String for database storage
         if (request.getHereditaryDiseases() != null && !request.getHereditaryDiseases().isEmpty()) {
-            assessment.setHereditaryDiseases(String.join(",", request.getHereditaryDiseases()));
+            healthData.setHereditaryDiseases(String.join(",", request.getHereditaryDiseases()));
         } else {
-            assessment.setHereditaryDiseases(null);
+            healthData.setHereditaryDiseases(null);
         }
         
-        assessment.setNumberOfDependents(request.getNumberOfDependents());
-        assessment.setIsSmoker(request.getIsSmoker());
-        assessment.setCity(request.getCity());
-        assessment.setBloodPressure(request.getBloodPressure());
-        assessment.setHasDiabetes(request.getHasDiabetes());
-        assessment.setRegularExercise(request.getRegularExercise());
-        assessment.setJobTitle(request.getJobTitle());
+        healthData.setNumberOfDependents(request.getNumberOfDependents());
+        healthData.setIsSmoker(request.getIsSmoker());
+        healthData.setCity(request.getCity());
+        healthData.setBloodPressure(request.getBloodPressure());
+        healthData.setHasDiabetes(request.getHasDiabetes());
+        healthData.setRegularExercise(request.getRegularExercise());
+        healthData.setJobTitle(request.getJobTitle());
     }
     
     private HealthRiskAssessmentResponse mapToResponse(HealthRiskAssessment assessment) {
+        HealthData healthData = assessment.getHealthData();
+        
         HealthRiskAssessmentResponse response = new HealthRiskAssessmentResponse();
         response.setId(assessment.getId());
-        response.setAge(assessment.getAge());
-        response.setSex(assessment.getSex());
-        response.setWeight(assessment.getWeight());
-        response.setHeight(assessment.getHeight());
-        response.setBmi(assessment.getBmi());
+        response.setAge(healthData.getAge());
+        response.setSex(healthData.getSex());
+        response.setWeight(healthData.getWeight());
+        response.setHeight(healthData.getHeight());
+        response.setBmi(healthData.getBmi());
         
         // Convert comma-separated String back to List<String> for response
-        if (assessment.getHereditaryDiseases() != null && !assessment.getHereditaryDiseases().trim().isEmpty()) {
-            response.setHereditaryDiseases(Arrays.asList(assessment.getHereditaryDiseases().split(",")));
+        if (healthData.getHereditaryDiseases() != null && !healthData.getHereditaryDiseases().trim().isEmpty()) {
+            response.setHereditaryDiseases(Arrays.asList(healthData.getHereditaryDiseases().split(",")));
         } else {
             response.setHereditaryDiseases(Arrays.asList("None"));
         }
         
-        response.setNumberOfDependents(assessment.getNumberOfDependents());
-        response.setIsSmoker(assessment.getIsSmoker());
-        response.setCity(assessment.getCity());
-        response.setBloodPressure(assessment.getBloodPressure());
-        response.setHasDiabetes(assessment.getHasDiabetes());
-        response.setRegularExercise(assessment.getRegularExercise());
-        response.setJobTitle(assessment.getJobTitle());
+        response.setNumberOfDependents(healthData.getNumberOfDependents());
+        response.setIsSmoker(healthData.getIsSmoker());
+        response.setCity(healthData.getCity());
+        response.setBloodPressure(healthData.getBloodPressure());
+        response.setHasDiabetes(healthData.getHasDiabetes());
+        response.setRegularExercise(healthData.getRegularExercise());
+        response.setJobTitle(healthData.getJobTitle());
         response.setRiskScore(assessment.getRiskScore());
         response.setRiskCategory(assessment.getRiskCategory());
         response.setCreatedAt(assessment.getCreatedAt());
